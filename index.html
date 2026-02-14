@@ -116,6 +116,18 @@
             font-weight: bold;
         }
 
+        .location-link {
+            color: inherit;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+            display: inline-block;
+        }
+
+        .location-link:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
         .description {
             text-align: center;
             font-size: 1.2em;
@@ -244,7 +256,7 @@
                     <div class="info-card">
                         <div class="info-card-icon">📍</div>
                         <h2>Where</h2>
-                        <p><span class="highlight">St Patrick's College</span><br>Ballymena<br>Northern Ireland</p>
+                        <p><a href="https://www.google.com/maps/search/?api=1&query=St+Patrick's+College+Ballymena+Northern+Ireland" target="_blank" class="location-link"><span class="highlight">St Patrick's College</span><br>Ballymena<br>Northern Ireland</a></p>
                     </div>
 
                     <div class="info-card">
