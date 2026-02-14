@@ -1,26 +1,287 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8"/>
-		<title>CraiCON - Enjoy the craic ofr boardgaming</title>
-		<style>
-			body {
-				font-family: sans-serif;
-			}
-			h1, h4 {
-				text-align: center;
-			}
-			.heading {
-				font-size: 5em;
-			}
-		</style>
-	</head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CraiCON 2026 - Northern Ireland's Newest Board Gaming Convention</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-	<body>
-		<h1 class="heading">CraiCON 2026</h1>
-		<div style="display: flex; justify-content: center;" width="100%">
-			<img src="images/craicon.jpg" alt="CraiCON logo"/>
-		</div>
-		<h4>Feel free to <a href="mailto:info@craicon-ni.com">email us</a></h4>
-	</body>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1035 0%, #2d1b4e 50%, #1a1035 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px 20px;
+        }
+
+        .logo-container {
+            margin: 0 auto 30px;
+            max-width: 400px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 10px 30px rgba(138, 43, 226, 0.5));
+        }
+
+        h1 {
+            font-size: 4em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ff6ec7, #a855f7, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeIn 1.2s ease-in;
+        }
+
+        .tagline {
+            font-size: 1.5em;
+            color: #c084fc;
+            margin-bottom: 40px;
+            animation: fadeIn 1.4s ease-in;
+        }
+
+        .info-section {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(168, 85, 247, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px 0;
+            backdrop-filter: blur(10px);
+            animation: slideUp 1s ease-out;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(6, 182, 212, 0.2));
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
+        }
+
+        .info-card-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .info-card h2 {
+            font-size: 1.3em;
+            color: #ff6ec7;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-card p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+
+        .highlight {
+            color: #06b6d4;
+            font-weight: bold;
+        }
+
+        .description {
+            text-align: center;
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #d0d0d0;
+            margin: 30px 0;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .email-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #a855f7, #06b6d4);
+            color: white;
+            text-decoration: none;
+            padding: 18px 45px;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 20px rgba(168, 85, 247, 0.4);
+        }
+
+        .email-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(168, 85, 247, 0.6);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #9ca3af;
+            font-size: 0.95em;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .tagline {
+                font-size: 1.2em;
+            }
+
+            .info-section {
+                padding: 25px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .email-link {
+                padding: 15px 35px;
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="images/craicon.jpg" alt="CraiCON Logo">
+            </div>
+            <h1>CraiCON 2026</h1>
+            <p class="tagline">Northern Ireland's Newest Board Gaming Convention</p>
+        </header>
+
+        <main>
+            <div class="info-section">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-card-icon">📅</div>
+                        <h2>When</h2>
+                        <p><span class="highlight">July 31st - August 2nd</span><br>2026</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-card-icon">📍</div>
+                        <h2>Where</h2>
+                        <p><span class="highlight">St Patrick's College</span><br>Ballymena<br>Northern Ireland</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-card-icon">🎲</div>
+                        <h2>What</h2>
+                        <p>Three days of<br><span class="highlight">board gaming excellence</span><br>and craic!</p>
+                    </div>
+                </div>
+
+                <div class="description">
+                    <p>Join us for an unforgettable weekend of tabletop gaming, community, and fun. Whether you're a seasoned gamer or just getting started, CraiCON has something for everyone!</p>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <a href="mailto:info@craicon-ni.com" class="email-link">Get in Touch 📧</a>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 CraiCON. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Create twinkling stars
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 50; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.width = Math.random() * 3 + 'px';
+            star.style.height = star.style.width;
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
 </html>
